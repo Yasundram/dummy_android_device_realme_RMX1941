@@ -28,11 +28,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Parts
 $(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
 
-PRODUCT_SHIPPING_API_LEVEL := 29
+ALLOW_MISSING_DEPENDENCIES=true
 
 # VNDK
 BOARD_VNDK_VERSION := 29
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
+PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600

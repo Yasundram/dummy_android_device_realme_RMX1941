@@ -27,6 +27,8 @@ $(call inherit-product-if-exists, packages/apps/NusantaraParts/nadproject.mk)
 
 TARGET_BOOT_ANIMATION_RES := 720
 
+ALLOW_MISSING_DEPENDENCIES := true
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := nad_RMX1941
 PRODUCT_DEVICE := RMX1941
