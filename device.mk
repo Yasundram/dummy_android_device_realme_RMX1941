@@ -83,6 +83,10 @@ PRODUCT_BOOT_JARS += \
     mediatek-telecom-common \
     mediatek-telephony-base \
     mediatek-telephony-common 
+	
+# Trustonic TEE
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/public.libraries-trustonic.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-trustonic.txt
 
 # IMS
 PRODUCT_PACKAGES += \
