@@ -75,10 +75,16 @@ on post-fs-data
 	
 on boot
 
+	# DT2W
+    chown system input /dev/input/event0
+    chown system input /dev/input/event1
+    chown system input /dev/input/event2
+
     # Touchscreen/DT2W
     chown system system /proc/touchpanel/double_tap_enable
-    chown 0660 /proc/touchpanel/double_tap_enable
+    chmod 0660 /proc/touchpanel/double_tap_enable
     write /proc/touchpanel/double_tap_enable 1
+	start double_tap_enable
 
     # Disable edge limit control interface
     write /proc/touchpanel/oppo_tp_limit_enable 0
