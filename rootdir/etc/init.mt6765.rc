@@ -1,4 +1,4 @@
-import /system/etc/init/init.safaiilnet.rc
+import /system/etc/init/init.safailnet.rc
 
 on early-init 
      start adbd
