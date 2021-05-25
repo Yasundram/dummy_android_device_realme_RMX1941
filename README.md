@@ -1,29 +1,43 @@
-Realme C3/Realme Narzo 10A Device Tree - RMX2020/RMX2027
-================================================================
+Device Tree for Realme C2
+===========================================
 
+The Realme C2 is a budget range smartphone from Realme, announced in April 2019.
+
+## Device specifications
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | Octa-core (2x2.0 GHz Cortex-A75 & 6x1.7 GHz Cortex-A55)
-Chipset | MediaTek Helio G70 (12 nm)
-GPU     | Mali-G52 2EEMC2
-Memory  | 3/4 GB
-Shipped Android Version | Android 10, realme UI 1.0 
-Storage | 32/64 GB (eMMC type)
-MicroSD | Up to 512 GB 
-Battery | Li-Po 5000 mAh, non-removable
-Dimensions | 164.4 x 75 x 9 mm (6.47 x 2.95 x 0.35 in)
-Display | 720 x 1560 pixels, 6.50" IPS LCD, 20:9 ratio (~270 ppi density)
-Rear Camera  | Dual : 13 MP; 2MP(depth); 2MP(Macro- only Narzo 10A and C3 Global)
-Front Camera | Single: 5 MP
-Release Month | 2020, February 14 | 2020, May 22 
+OS	| Android 9.0 (pie)	
+CPU     | Octa-core 2.0 GHz Cortex-A53
+Chipset | Mediatek MT6762 Helio P22 (12 nm)
+GPU     | PowerVR GE8320
+Memory  | 2GB/3GB RAM
+Storage | 16GB/32GB
+MicroSD | up to 64 GB (dedicated slot)
+Battery | Non-removable Li-Ion 4000 mAh battery
+Resolution | 720 x 1560 pixels, 19.5:9 ratio (~282 ppi density)
+Camera (Rear)  | 13 MP, f/2.2, 1/3.1", 1.12µm, PDAF & 2 MP, f/2.4, (depth)
+Rear Camera Features | LED flash, HDR, panorama
+Video	| 1080p@30fps	
+Camera (Front)  | 5 MP, f/2.0, 1/5", 1.12µm
+Features| Accelerometer, proximity, compass	
 
-![Realme C3](https://fdn2.gsmarena.com/vv/pics/realme/realme-c3-2020-2.jpg "Realme C3")
+## Device picture
+
+![Realme C2](https://assets.mspimages.in/c/tr:w-1000,h-1000,c-at_max/15600-42-2.jpg "Realme C2")
+
+## Patches required
+ 
+Bootup: 
+
+1) https://github.com/PixelExperience/external_selinux/commit/9d6ebe89430ffe0aeeb156f572b2a810f9dc98cc
+
+IMS-VoLTE:
+
+1) https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7
+
+2) https://github.com/PixelExperience/frameworks_opt_net_wifi/commit/3bd2c14fbda9c079a4dc39ff4601ba54da589609
+
+3) https://github.com/PixelExperience/frameworks_opt_net_ims/commit/661ae9749b5ea7959aa913f2264dc5e170c63a0a
 
 
-Patches needed:
-
-1. Needed to boot: https://github.com/SamarV-121/android_vendor_extra/blob/lineage-18.1/patches/external/selinux/0001-Revert-libsepol-Make-an-unknown-permission-an-error-.patch
-2. Needed for AV fix: https://github.com/phhusson/platform_frameworks_av/commit/624cfc90b8bedb024f289772960f3cd7072fa940.patch
-
-Copyright (C) 2021 Lineage OS

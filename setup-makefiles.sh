@@ -18,10 +18,10 @@
 
 set -e
 
-export DEVICE=RMX2020
+export DEVICE=RMX1941
 export VENDOR=realme
 
-INITIAL_COPYRIGHT_YEAR=2020
+INITIAL_COPYRIGHT_YEAR=2019
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -40,7 +40,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false
 
 # Copyright headers and guards
-write_headers "RMX2020"
+write_headers "RMX1941"
 
 # The standard blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true

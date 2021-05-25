@@ -14,13 +14,13 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/RMX2020
+DEVICE_PATH := device/realme/RMX1941
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # Call proprietary blob setup
-$(call inherit-product-if-exists, vendor/realme/RMX2020/RMX2020-vendor.mk)
+$(call inherit-product-if-exists, vendor/realme/RMX1941/RMX1941-vendor.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -31,11 +31,8 @@ $(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
 PRODUCT_SHIPPING_API_LEVEL := 29
 
 # VNDK
+BOARD_VNDK_VERSION := 29
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
-
-# Dynamic Partition
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
@@ -49,21 +46,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
     $(DEVICE_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_EXTRA_VNDK_VERSIONS)/etc/audio_policy_configuration.xml \
-    $(DEVICE_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_ODM)/etc/audio_policy_configuration.xml
+    $(DEVICE_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_ODM)/etc/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_EXTRA_VNDK_VERSIONS)/etc/audio_effects.conf \
+    $(DEVICE_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_ODM)/etc/audio_effects.conf
 
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.RMX2020
+    $(DEVICE_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6765
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.ims.xml
 
@@ -83,8 +78,9 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mt6768.rc \
-    fstab.mt6768 \
+    init.mt6765.rc \
+    fstab.mt6765 \
+    init.safailnet.rc \
     perf_profile.sh
 
 # Keylayouts
@@ -100,7 +96,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.RMX2020
+    android.hardware.light@2.0-service.RMX1941
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -120,11 +116,20 @@ PRODUCT_PACKAGES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.controls.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.controls.xml \
-    $(DEVICE_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
+    $(DEVICE_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-com.android.customization.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.android.customization.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-com.custom.ambient.display.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.custom.ambient.display.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-com.google.android.packageinstaller.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.google.android.packageinstaller.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-com.android.launcher3.xml:$(TARGET_COPY_OUT_SYSTEM)/system_ext/etc/permissions/privapp-permissions-com.android.launcher3.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-com.android.systemui.xml:$(TARGET_COPY_OUT_SYSTEM)/system_ext/etc/permissions/privapp-permissions-com.android.systemui.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-com.google.android.gms.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.google.android.gms.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-com.google.android.gsf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.google.android.gsf.xml
+	
 
 # Power
 PRODUCT_PACKAGES += \
-    power.mt6768
+    power.mt6765
 
 # Properties
 -include $(DEVICE_PATH)/system_prop.mk
