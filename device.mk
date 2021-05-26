@@ -32,6 +32,7 @@ ALLOW_MISSING_DEPENDENCIES=true
 
 # VNDK
 BOARD_VNDK_VERSION := 29
+PRODUCT_TARGET_VNDK_VERSION := 29
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
 PRODUCT_SHIPPING_API_LEVEL := 29
 
@@ -71,8 +72,12 @@ PRODUCT_COPY_FILES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
+    android.hidl.base@1.0_system \
+    android.hidl.manager@1.0_system \
     libhidltransport \
-    libhwbinder
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
 	
 # Telephony Jars
 PRODUCT_BOOT_JARS += \
@@ -173,6 +178,10 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+
+# Do not spin up a separate process for the network stack, use an in-process APK.
+PRODUCT_PACKAGES += InProcessNetworkStack
+PRODUCT_PACKAGES += com.android.tethering.inprocess
 
 # Symbols
 PRODUCT_PACKAGES += \
