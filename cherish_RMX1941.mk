@@ -16,7 +16,9 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Inherit from device makefile
 $(call inherit-product, device/realme/RMX1941/device.mk)
@@ -27,16 +29,16 @@ $(call inherit-product, device/realme/RMX1941/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
-# Inherit some common NusantaraROM stuff.
-$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
-$(call inherit-product-if-exists, packages/apps/NusantaraParts/nadproject.mk)
-
-TARGET_BOOT_ANIMATION_RES := 720
+# Inherit some common RevengeOS stuff
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_INCLUDE_PIXEL_CHARGER := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := nad_RMX1941
+PRODUCT_NAME := cherish_RMX1941
 PRODUCT_DEVICE := RMX1941
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme C2
@@ -53,3 +55,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-realme
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
+PRODUCT_GENERIC_PROPERTIES += \
+    ro.cherish.maintainer=Sundram

@@ -189,3 +189,8 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     wpa_supplicant.conf \
     WifiOverlay
+
+# RealmeParts
+$(call inherit-product, packages/apps/RealmeParts/parts.mk)
+
+
