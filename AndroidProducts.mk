@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/wave_RMX1941.mk
+    $(LOCAL_DIR)/zeus_RMX1941.mk
 
 COMMON_LUNCH_CHOICES := \
-        wave_RMX1941-eng \
-        wave_RMX1941-user \
-        wave_RMX1941-userdebug
+        zeus_RMX1941-eng \
+        zeus_RMX1941-user \
+        zeus_RMX1941-userdebug
