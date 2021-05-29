@@ -35,7 +35,7 @@ $(call inherit-product, vendor/palladium/config/common_full_phone.mk)
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := wave_RMX1941
+PRODUCT_NAME := palladium_RMX1941
 PRODUCT_DEVICE := RMX1941
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme C2
