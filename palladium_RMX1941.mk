@@ -31,7 +31,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 # Inherit some common RevengeOS stuff
 TARGET_BOOT_ANIMATION_RES := 720
-$(call inherit-product, vendor/wave/configs/common.mk)
+$(call inherit-product, vendor/zeus/config/common_full_phone.mk)
 
 ALLOW_MISSING_DEPENDENCIES := true
 
