@@ -16,9 +16,9 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Inherit from device makefile
 $(call inherit-product, device/realme/RMX1941/device.mk)
@@ -30,8 +30,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 # Inherit some common RevengeOS stuff
-TARGET_BOOT_ANIMATION_RES := 720
-$(call inherit-product, vendor/zeus/config/common_full_phone.mk)
+$(call inherit-product, vendor/palladium/config/common_full_phone.mk)
 
 ALLOW_MISSING_DEPENDENCIES := true
 
@@ -53,4 +52,21 @@ PRODUCT_GMS_CLIENTID_BASE := android-realme
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
+# Inherit some common Palladium stuff.
+TARGET_BOOT_ANIMATION_RES := 720
+PALLADIUM_BUILDTYPE := UNOFFICIAL
+
+# GAPPS
+TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+
+# PALLADIUM-PROPS
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.palladiumdevice.maintainer=ANOOSRAGH \
+    ro.palladiumdevice.cpu=HELIOP22 \
+    ro.palladiumdevice.display=6.08 \
+    ro.palladiumdevice.displaytype=HD \
+    ro.palladiumdevice.battery=4000mAh \
+    ro.palladiumdevice.camera=13MP+2MP
 
