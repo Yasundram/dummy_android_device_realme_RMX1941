@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/zeus_RMX1941.mk
+    $(LOCAL_DIR)/palladium_RMX1941.mk
 
 COMMON_LUNCH_CHOICES := \
-        zeus_RMX1941-eng \
-        zeus_RMX1941-user \
-        zeus_RMX1941-userdebug
+        palladium_RMX1941-eng \
+        palladium_RMX1941-user \
+        palladium_RMX1941-userdebug
