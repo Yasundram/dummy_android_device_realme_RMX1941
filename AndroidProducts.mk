@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/palladium_RMX1941.mk
+    $(LOCAL_DIR)/potato_RMX1941.mk
 
 COMMON_LUNCH_CHOICES := \
-        palladium_RMX1941-eng \
-        palladium_RMX1941-user \
-        palladium_RMX1941-userdebug
+        potato_RMX1941-eng \
+        potato_RMX1941-user \
+        potato_RMX1941-userdebug
