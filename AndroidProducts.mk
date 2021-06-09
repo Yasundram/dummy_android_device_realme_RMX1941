@@ -15,9 +15,10 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/potato_RMX1941.mk
-
+    $(LOCAL_DIR)/cherish_RMX1941.mk
+    
+    
 COMMON_LUNCH_CHOICES := \
-        potato_RMX1941-eng \
-        potato_RMX1941-user \
-        potato_RMX1941-userdebug
+        cherish_RMX1941-eng \
+        cherish_RMX1941-user \
+        cherish_RMX1941-userdebug
