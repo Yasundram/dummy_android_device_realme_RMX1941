@@ -29,13 +29,10 @@ $(call inherit-product, device/realme/RMX1941/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/potato/config/common_full_phone.mk)
-
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := potato_RMX1941
+PRODUCT_NAME := cherish_RMX1941
 PRODUCT_DEVICE := RMX1941
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme C2
@@ -53,3 +50,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-realme
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 
+TARGET_BOOT_ANIMATION_RES := 720
+
+# GAPPS
+TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
