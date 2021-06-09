@@ -100,5 +100,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0
 
 # posp
-ro.potato.maintainer=AnoosRagh
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.potato.maintainer=AnoosRagh
 
