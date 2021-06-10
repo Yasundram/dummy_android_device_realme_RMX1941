@@ -99,5 +99,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
     
-PRODUCT_PRODUCT_OVERRIDES += \
-    ro.cherish.build_date=true \
+PRODUCT_GENERIC_PROPERTIES += \
+    ro.cherish.version=$(CHERISHVERSION) \
+    ro.cherish.version.display=$(CHERISH_VERSION) \
+    ro.cherish.build_date=$(CHERISH_BUILD_DATE) \
+    ro.cherish.maintainer=$(CHERISH_MAINTAINER) \
+    ro.cherish.codename=$(CHERISH_CODENAME) \
+    ro.cherish.version.prop=$(CHERISH_VERSION_PROP) \
+    ro.cherish.build_date_utc=$(CHERISH_BUILD_DATE_UTC) \
+    ro.cherish.build_type=$(CHERISH_BUILD_TYPE) 
