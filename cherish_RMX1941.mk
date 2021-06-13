@@ -20,9 +20,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+
 # Inherit from device makefile
 $(call inherit-product, device/realme/RMX1941/device.mk)
 
+# Inherit some common Lineage stuff
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 #
 # All components inherited here go to system_ext image
 #
@@ -52,6 +55,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 TARGET_BOOT_ANIMATION_RES := 720
 
-# GAPPS
-TARGET_GAPPS_ARCH := arm64
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
