@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/potato_RMX1941.mk
+    $(LOCAL_DIR)/corvus_RMX1941.mk
 
 COMMON_LUNCH_CHOICES := \
-        potato_RMX1941-eng \
-        potato_RMX1941-user \
-        potato_RMX1941-userdebug
+        corvus_RMX1941-eng \
+        corvus_RMX1941-user \
+        corvus_RMX1941-userdebug
