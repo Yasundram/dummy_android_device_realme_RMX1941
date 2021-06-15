@@ -53,3 +53,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-realme
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 
+# Corvus Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.corvus.maintainer=Sundram
+
