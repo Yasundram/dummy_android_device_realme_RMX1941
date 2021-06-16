@@ -18,6 +18,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/descendant_RMX1941.mk
 
 COMMON_LUNCH_CHOICES := \
-    descendant_X00TD-eng \
-    descendant_X00TD-user \
-    descendant_X00TD-userdebug
+    descendant_RMX1941-eng \
+    descendant_RMX1941-user \
+    descendant_RMX1941-userdebug
