@@ -30,12 +30,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/potato/config/common_full_phone.mk)
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 ALLOW_MISSING_DEPENDENCIES := true
+TARGET_BOOT_ANIMATION_RES := 720
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := potato_RMX1941
+PRODUCT_NAME := cherish_RMX1941
 PRODUCT_DEVICE := RMX1941
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme C2
